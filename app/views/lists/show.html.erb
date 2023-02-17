@@ -1,0 +1,9 @@
+<div class="container mt-4">
+<h1>Movies</h1>
+<p><%= @list.name %></p>
+<%= link_to lists_path, class: 'btn btn-primary' do %>
+  <i class="fa-solid fa-igloo text-white"></i>
+<% end %>
+
+<%= link_to "Add a new bookmark 📖", new_list_bookmark_path(@list), class: "btn btn-primary text-white" %>
+</div>

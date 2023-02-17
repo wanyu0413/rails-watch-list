@@ -1,0 +1,15 @@
+<div class="container ">
+  <div class="card shadow-lg p-3 mb-5 bg-body rounded mt-4">
+    <div class="card-body">
+    <h1>New list</h1>
+    <%= simple_form_for @list do |f| %>
+      <%= f.input :name %>
+      <%= f.submit 'Add a new list', class: "btn btn-info"  %>
+    <% end %>
+
+    <%= link_to lists_path, class: 'btn btn-primary' do %>
+      <i class="fa-solid fa-igloo text-white"></i>
+    <% end %>
+    </div>
+  </div>
+</div>

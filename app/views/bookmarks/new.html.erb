@@ -1,0 +1,12 @@
+<div class="container">
+<h1>Add New Movies</h1>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.submit 'Add a new bookmark 📖', class: "btn btn-info" %>
+<% end %>
+
+<%= link_to lists_path, class: 'btn btn-primary' do %>
+  <i class="fa-solid fa-igloo text-white"></i>
+<% end %>
+</div>
