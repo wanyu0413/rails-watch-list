@@ -1,6 +1,12 @@
 <div class="container mt-4">
 <h1>Movies</h1>
 <p><%= @list.name %></p>
+<% @list.bookmarks.each do |bookmark| %>
+  <%= bookmark.movie.title %>
+  <%= bookmark.movie.overview %>
+<% end %>
+
+
 <%= link_to lists_path, class: 'btn btn-primary' do %>
   <i class="fa-solid fa-igloo text-white"></i>
 <% end %>

@@ -1,8 +1,13 @@
 <div class="container mt-4">
   <h1>Lists of movie 📽</h1>
-  <div class="d-flex justify-content-between"><% @lists.each do |list| %>
+  <div class="d-flex justify-content-between">
+  <% @lists.each do |list| %>
     <div class="card bg-dark me-3 shadow mb-5 bg-body rounded">
-      <img src="https://media.istockphoto.com/id/1320169431/photo/capybara-showing-his-teeth.jpg?b=1&s=170667a&w=0&k=20&c=Z9bc2wM5tBzObCt2rtXiaLZMJm82ACi_7AJ0bZmviyc=" class="card-img" alt="...">
+      <% if list.photo.attached? %>
+        <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <%= image_tag "https://media.istockphoto.com/id/1320169431/photo/capybara-showing-his-teeth.jpg?b=1&s=170667a&w=0&k=20&c=Z9bc2wM5tBzObCt2rtXiaLZMJm82ACi_7AJ0bZmviyc=", alt: "Le Wagon", width: 200 %>
+      <% end %>
       <div class="card-img-overlay d-flex justify-content-center align-items-center">
         <h3><%= link_to list.name, list_path(list), class: 'text-decoration-none text-white' %></h3>
       </div>
