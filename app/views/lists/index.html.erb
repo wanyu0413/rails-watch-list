@@ -1,18 +1,22 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1477313372947-d68a7d410e9f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+  <div class="container">
+    <h1>Your Movie list</h1>
+    <p><span data-controller="typed-js"></span></p>
+  </div>
+</div>
+
 <div class="container mt-4">
   <h1>Lists of movie 📽</h1>
-  <div class="d-flex justify-content-between">
-  <% @lists.each do |list| %>
-    <div class="card bg-dark me-3 shadow mb-5 bg-body rounded">
-      <% if list.photo.attached? %>
-        <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
-      <% else %>
-        <%= image_tag "https://media.istockphoto.com/id/1320169431/photo/capybara-showing-his-teeth.jpg?b=1&s=170667a&w=0&k=20&c=Z9bc2wM5tBzObCt2rtXiaLZMJm82ACi_7AJ0bZmviyc=", alt: "Le Wagon", width: 200 %>
-      <% end %>
-      <div class="card-img-overlay d-flex justify-content-center align-items-center">
-        <h3><%= link_to list.name, list_path(list), class: 'text-decoration-none text-white' %></h3>
+  <div>
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://images.unsplash.com/photo-1479762937580-3b682a10a0d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80' %>)">
+        <%= link_to list.name, list_path(list), class: 'text-decoration-none text-white' %>
       </div>
-    </div>
-  <% end %></div>
+    <% end %>
+  </div>
 
   <%= link_to "Create a movie list", new_list_path, class: "btn btn-primary text-white mt-4" %>
 </div>
+
+<%# <%= image_tag "https://media.istockphoto.com/id/1320169431/photo/capybara-showing-his-teeth.jpg?b=1&s=170667a&w=0&k=20&c=Z9bc2wM5tBzObCt2rtXiaLZMJm82ACi_7AJ0bZmviyc=", alt: "Le Wagon", width: 200 %>
+<%# <% end %>
