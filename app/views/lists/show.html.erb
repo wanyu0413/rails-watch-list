@@ -6,9 +6,10 @@
 <div class="container mt-4">
   <div class="d-flex">
     <% @list.bookmarks.each do |bookmark| %>
-      <div class="card m-2" style="width: 18rem;">
+      <div class="card me-3 mb-5" style="width: 18rem;">
         <img src="<%= bookmark.movie.poster_url %>" class="card-img-top" alt="movie poster">
         <div class="card-body">
+          <p class="card-text"><%= bookmark.movie.rating %></p>
           <h1> <%= bookmark.movie.title %></h1>
           <p class="card-text"><%= bookmark.movie.overview %></p>
         </div>
