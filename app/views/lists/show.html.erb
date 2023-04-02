@@ -9,8 +9,10 @@
       <div class="card me-3 mb-5" style="width: 18rem;">
         <img src="<%= bookmark.movie.poster_url %>" class="card-img-top" alt="movie poster">
         <div class="card-body">
-          <p class="card-text"><%= bookmark.movie.rating %></p>
-          <h1> <%= bookmark.movie.title %></h1>
+          <p class="card-text"><%= bookmark.movie.rating %>
+            <i class="fa-solid fa-star" style="color: #FFEA20;"></i>
+          </p>
+          <h2> <%= bookmark.movie.title %></h2>
           <p class="card-text"><%= bookmark.movie.overview %></p>
         </div>
       </div>
