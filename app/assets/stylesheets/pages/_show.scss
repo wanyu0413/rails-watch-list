@@ -7,3 +7,7 @@
 .card-body p{
   font-size: 14px;
 }
+
+.card-body p:first-child{
+  white-space: nowrap;
+}
